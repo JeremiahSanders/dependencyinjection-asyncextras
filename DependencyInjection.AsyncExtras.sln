@@ -5,11 +5,11 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{59CFF7BA-E150-4A82-B735-5404FC88CCE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionAsyncExtras", "src\library\DependencyInjectionAsyncExtras.csproj", "{2F02E540-C1E0-4901-8F13-FEEFCD63ADE5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection.AsyncExtras", "src\library\DependencyInjection.AsyncExtras.csproj", "{2F02E540-C1E0-4901-8F13-FEEFCD63ADE5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1533F4A5-642B-4FA8-86C6-D01E12AFE485}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionAsyncExtras.Tests.Unit", "tests\unit\DependencyInjectionAsyncExtras.Tests.Unit.csproj", "{2262D308-C8D2-43CC-8A43-CE68C158CA1F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection.AsyncExtras.Tests.Unit", "tests\unit\DependencyInjection.AsyncExtras.Tests.Unit.csproj", "{2262D308-C8D2-43CC-8A43-CE68C158CA1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

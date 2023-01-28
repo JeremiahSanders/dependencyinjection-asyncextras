@@ -1,4 +1,4 @@
-﻿namespace Jds.DependencyInjectionAsyncExtras;
+﻿namespace Jds.DependencyInjection.AsyncExtras;
 
 /// <summary>
 ///   Default implementation of <see cref="IAsyncResolver{T}" />.

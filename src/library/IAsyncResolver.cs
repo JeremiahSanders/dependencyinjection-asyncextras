@@ -1,4 +1,4 @@
-﻿namespace Jds.DependencyInjectionAsyncExtras;
+﻿namespace Jds.DependencyInjection.AsyncExtras;
 
 /// <summary>
 ///   A provider of asynchronous <typeparamref name="T" /> values.

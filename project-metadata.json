@@ -1,7 +1,7 @@
 {
   "name": "dependencyinjection-asyncextras",
   "description": "",
-  "title": "DependencyInjection Async Extras",
+  "title": "Dependency Injection Async Extras",
   "version": "0.0.0",
   "ciEnvironment": {
     "variables": [
