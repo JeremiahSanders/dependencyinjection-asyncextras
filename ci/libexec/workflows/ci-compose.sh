@@ -18,6 +18,18 @@ set -o nounset  # Fail if an unset variable is used.
 set -o pipefail # Fail pipelines if any command errors, not just the last one.
 
 function ci-compose() {
+  function createDocs() {
+    cd "${PROJECT_ROOT}"
+    dotnet tool restore
+    local sourcePath="${BUILD_UNPACKAGED_DIST}/DependencyInjection.AsyncExtras.dll"
+    local outputPath="${BUILD_DOCS}/md"
+    dotnet xmldocmd "${sourcePath}" "${outputPath}" \
+      --namespace "Jds.DependencyInjection.AsyncExtras" \
+      --source "https://github.com/JeremiahSanders/dependencyinjection-asyncextras/tree/main/src" \
+      --newline lf \
+      --visibility public
+  }
+
   printf "Composing build artifacts...\n\n" &&
     dotnet publish "${PROJECT_ROOT}/src/library" \
       --configuration Release \
@@ -32,6 +44,7 @@ function ci-compose() {
       -p:Version="${PROJECT_VERSION_DIST}" \
       -p:GenerateDocumentationFile=true &&
     printf "\nNuGet package output to %s\n\n" "${BUILD_PACKAGED_DIST}/nuget/" &&
+    createDocs &&
     printf "Composition complete.\n"
 }
 

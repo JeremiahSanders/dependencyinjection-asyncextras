@@ -4,6 +4,8 @@
 >
 > This project is not affiliated with Microsoft and asserts no claims upon its intellectual property.
 
+* [API documentation][]
+
 ## Example Use Cases
 
 ### Retrieving Remote Configuration
@@ -133,6 +135,7 @@ public class ExperimentalFeaturesInitializer : BackgroundService
 }
 ```
 
+[API documentation]: https://github.com/JeremiahSanders/dependencyinjection-asyncextras/tree/dev/docs/api/DependencyInjection.AsyncExtras.md
 [hosted services]: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/host/hosted-services
 [Microsoft.Extensions.DependencyInjection.Abstractions]: https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection.Abstractions
 [scoped dependencies]: https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection#scoped
