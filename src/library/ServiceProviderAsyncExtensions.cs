@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace Jds.DependencyInjectionAsyncExtras;
+namespace Jds.DependencyInjection.AsyncExtras;
 
 /// <summary>
 ///   Methods adding async resolution to <see cref="IServiceProvider" />.

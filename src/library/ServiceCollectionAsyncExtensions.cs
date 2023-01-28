@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace Jds.DependencyInjectionAsyncExtras;
+namespace Jds.DependencyInjection.AsyncExtras;
 
 /// <summary>
 ///   Methods registering async services.

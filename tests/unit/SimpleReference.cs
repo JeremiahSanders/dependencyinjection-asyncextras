@@ -1,4 +1,4 @@
-﻿namespace Jds.DependencyInjectionAsyncExtras.Tests.Unit;
+﻿namespace Jds.DependencyInjection.AsyncExtras.Tests.Unit;
 
 /// <summary>
 ///   Simple reference type usable for generic type arguments.

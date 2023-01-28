@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Jds.$(AssemblyName)</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>jds</Authors>
+    <Company />
+    <Copyright>Copyright (c) 2023 Jeremiah Sanders</Copyright>
+    <Description>Extensions to Microsoft.Extensions.DependencyInjection.Abstractions supporting resolving services asynchronously.</Description>
+    <PackageId>Jds.DependencyInjection.AsyncExtras</PackageId>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/JeremiahSanders/dependencyinjection-asyncextras</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Product>Jds.DependencyInjection.AsyncExtras</Product>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/JeremiahSanders/dependencyinjection-asyncextras</RepositoryUrl>
+    <Title>Dependency Injection Async Extras</Title>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include=".\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+</Project>

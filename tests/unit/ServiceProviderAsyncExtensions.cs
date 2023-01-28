@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace Jds.DependencyInjectionAsyncExtras.Tests.Unit;
+namespace Jds.DependencyInjection.AsyncExtras.Tests.Unit;
 
 public static class ServiceProviderAsyncExtensions
 {

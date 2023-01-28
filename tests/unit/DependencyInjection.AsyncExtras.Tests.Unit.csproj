@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\library\DependencyInjectionAsyncExtras.csproj" />
+    <ProjectReference Include="..\..\src\library\DependencyInjection.AsyncExtras.csproj" />
   </ItemGroup>
 
 </Project>

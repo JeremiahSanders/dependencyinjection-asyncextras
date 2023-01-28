@@ -1,6 +1,6 @@
 ﻿using LanguageExt;
 
-namespace Jds.DependencyInjectionAsyncExtras.Tests.Unit;
+namespace Jds.DependencyInjection.AsyncExtras.Tests.Unit;
 
 internal static class AsyncFactoryBuilders
 {
