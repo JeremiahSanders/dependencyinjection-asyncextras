@@ -7,6 +7,12 @@
       "commands": [
         "cicee"
       ]
+    },
+    "xmldocmd": {
+      "version": "2.9.0",
+      "commands": [
+        "xmldocmd"
+      ]
     }
   }
 }
