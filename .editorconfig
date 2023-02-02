@@ -9,6 +9,30 @@ insert_final_newline = true
 max_line_length = 120
 trim_trailing_whitespace = true
 
+# Microsoft .NET properties
+csharp_prefer_braces = true:none
+csharp_style_var_for_built_in_types = false:suggestion
+dotnet_separate_import_directive_groups = true
+dotnet_style_require_accessibility_modifiers = for_non_interface_members:suggestion
+
+# ReSharper properties
+resharper_braces_redundant = true
+resharper_csharp_space_after_type_parameter_constraint_colon = true
+resharper_csharp_stick_comment = false
+resharper_csharp_wrap_before_declaration_rpar = true
+resharper_default_value_when_type_not_evident = default_expression
+resharper_for_built_in_types = use_var_when_evident
+resharper_for_simple_types = use_var_when_evident
+resharper_indent_nested_fixed_stmt = true
+resharper_indent_nested_foreach_stmt = true
+resharper_indent_nested_for_stmt = true
+resharper_indent_nested_lock_stmt = true
+resharper_indent_nested_usings_stmt = true
+resharper_indent_nested_while_stmt = true
+resharper_keep_existing_switch_expression_arrangement = false
+resharper_space_after_type_parameter_constraint_colon = true
+resharper_trailing_comma_in_multiline_lists = true
+
 [*.md]
 insert_final_newline = true
 
