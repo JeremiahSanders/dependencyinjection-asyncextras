@@ -29,8 +29,7 @@ public static class ServiceProviderAsyncExtensions
 
   /// <inheritdoc cref="GetServiceAsync{T}" />
   /// <exception cref="System.InvalidOperationException">
-  ///   There is no service of type <typeparamref name="T" /> or
-  ///   <see cref="IAsyncResolver{T}" />.
+  ///   There is no service of type <typeparamref name="T" /> or <see cref="IAsyncResolver{T}" />.
   /// </exception>
   public static async Task<T> GetRequiredServiceAsync<T>(this IServiceProvider serviceProvider) where T : notnull
   {

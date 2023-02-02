@@ -9,13 +9,18 @@ internal static class AsyncFactoryBuilders
     return new Exception("Arranged failure");
   }
 
-  public static Func<IServiceProvider, Task<T>> Cancellations<T>(T value, int cancellationCount, int millisecondDelay = 1)
+  public static Func<IServiceProvider, Task<T>> Cancellations<T>(T value, int cancellationCount,
+    int millisecondDelay = 1
+  )
   {
     var failures = 0;
 
     Task<T> DelayedFailure(IServiceProvider _)
     {
-      if (failures >= cancellationCount) return value.AsTask();
+      if (failures >= cancellationCount)
+      {
+        return value.AsTask();
+      }
 
       failures++;
       return new Task<T>(() => throw new InvalidOperationException("Shouldn't execute"), new CancellationToken(true));
@@ -23,6 +28,7 @@ internal static class AsyncFactoryBuilders
 
     return DelayedFailure;
   }
+
   public static Func<IServiceProvider, Task<T>> Eventual<T>(T value, int failureCount, int millisecondDelay = 1)
   {
     var failures = 0;
@@ -31,7 +37,10 @@ internal static class AsyncFactoryBuilders
     {
       await Task.Delay(millisecondDelay);
 
-      if (failures >= failureCount) return value;
+      if (failures >= failureCount)
+      {
+        return value;
+      }
 
       failures++;
       throw CreateException();

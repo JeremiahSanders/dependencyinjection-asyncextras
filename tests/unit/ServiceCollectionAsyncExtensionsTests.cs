@@ -5,7 +5,8 @@ namespace Jds.DependencyInjection.AsyncExtras.Tests.Unit;
 public static class ServiceCollectionExtensionsTests
 {
   internal static IServiceProvider ArrangeServiceProvider<T>(Func<IServiceProvider, Task<T>> resolver,
-    ServiceLifetime lifetime)
+    ServiceLifetime lifetime
+  )
   {
     var serviceCollection = new ServiceCollection();
     serviceCollection.TryAddAsyncResolver(resolver, lifetime);
@@ -21,7 +22,7 @@ public static class ServiceCollectionExtensionsTests
       const int expectedValue = 42;
 
 
-      var asyncService = await RegisterAndResolve(
+      int asyncService = await RegisterAndResolve(
         AsyncFactoryBuilders.FromDelayedConstant(expectedValue, millisecondDelay)
       );
 
@@ -37,10 +38,10 @@ public static class ServiceCollectionExtensionsTests
         ReferenceType = Guid.NewGuid().ToString("D"),
         Child = new SimpleReference
         {
-          ReferenceType = Guid.NewGuid().ToString("D")
-        }
+          ReferenceType = Guid.NewGuid().ToString("D"),
+        },
       };
-      var asyncService = await RegisterAndResolve(
+      SimpleReference asyncService = await RegisterAndResolve(
         AsyncFactoryBuilders.FromDelayedConstant(expectedValue, millisecondDelay)
       );
 
@@ -48,7 +49,7 @@ public static class ServiceCollectionExtensionsTests
     }
 
 
-    private static Task<T> RegisterAndResolve<T>(Func<IServiceProvider, Task<T>> resolver) where T : notnull
+    private static Task<T> RegisterAndResolve<T>(Func<IServiceProvider, Task<T>> resolver) where T :notnull
     {
       return ArrangeServiceProvider(resolver, ServiceLifetime.Singleton).GetRequiredServiceAsync<T>();
     }

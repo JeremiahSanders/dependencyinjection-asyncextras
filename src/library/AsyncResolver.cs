@@ -10,6 +10,11 @@ public class AsyncResolver<T> : IAsyncResolver<T>
   private readonly IServiceProvider _serviceProvider;
   private Lazy<Task<T>> _lazy;
 
+  /// <summary>
+  ///   Initializes a new instance of the <see cref="AsyncResolver{T}" /> class.
+  /// </summary>
+  /// <param name="serviceProvider">A service provider.</param>
+  /// <param name="asyncFactory">A factory method which asynchronously creates <typeparamref name="T" /> instances.</param>
   public AsyncResolver(IServiceProvider serviceProvider, Func<IServiceProvider, Task<T>> asyncFactory)
   {
     _serviceProvider = serviceProvider;
@@ -24,19 +29,17 @@ public class AsyncResolver<T> : IAsyncResolver<T>
     bool ignoreCache = false
   )
   {
-    if ((!ignoreCache && regenerateIfFaulted && _lazy.IsValueCreated && _lazy.Value.IsFaulted) ||
-        (regenerateIfCanceled && _lazy.IsValueCreated && _lazy.Value.IsCanceled)) ResetLazy();
+    if ((!ignoreCache && regenerateIfFaulted && _lazy is {IsValueCreated: true, Value.IsFaulted: true}) ||
+        (!ignoreCache && regenerateIfCanceled && _lazy is {IsValueCreated: true, Value.IsCanceled: true}))
+    {
+      _lazy = CreateLazy();
+    }
+
     return ignoreCache ? _factory(_serviceProvider) : _lazy.Value;
   }
 
   private Lazy<Task<T>> CreateLazy()
   {
     return new Lazy<Task<T>>(() => _factory(_serviceProvider));
-  }
-
-  private Lazy<Task<T>> ResetLazy()
-  {
-    _lazy = CreateLazy();
-    return _lazy;
   }
 }

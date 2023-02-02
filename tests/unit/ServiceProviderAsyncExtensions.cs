@@ -9,7 +9,7 @@ public static class ServiceProviderAsyncExtensions
     [Fact]
     public async Task GivenRegisteredProviderReturnsExpectedService()
     {
-      var provider =
+      IServiceProvider provider =
         ServiceCollectionExtensionsTests.ArrangeServiceProvider(
           AsyncFactoryBuilders.FromDelayedConstant(new SimpleReference()), ServiceLifetime.Singleton);
 
@@ -21,7 +21,7 @@ public static class ServiceProviderAsyncExtensions
     [Fact]
     public async Task GivenUnregisteredProviderThrowsException()
     {
-      var provider =
+      IServiceProvider provider =
         ServiceCollectionExtensionsTests.ArrangeServiceProvider(
           AsyncFactoryBuilders.FromDelayedConstant(new SimpleReference()), ServiceLifetime.Singleton);
 
@@ -34,7 +34,7 @@ public static class ServiceProviderAsyncExtensions
     [Fact]
     public async Task GivenRegisteredProviderReturnsExpectedService()
     {
-      var provider =
+      IServiceProvider provider =
         ServiceCollectionExtensionsTests.ArrangeServiceProvider(
           AsyncFactoryBuilders.FromDelayedConstant(new SimpleReference()), ServiceLifetime.Singleton);
 
@@ -46,7 +46,7 @@ public static class ServiceProviderAsyncExtensions
     [Fact]
     public async Task GivenUnregisteredProviderReturnsNull()
     {
-      var provider =
+      IServiceProvider provider =
         ServiceCollectionExtensionsTests.ArrangeServiceProvider(
           AsyncFactoryBuilders.FromDelayedConstant(42), ServiceLifetime.Singleton);
 
