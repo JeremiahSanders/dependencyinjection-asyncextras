@@ -476,6 +476,9 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# JetBrains IDEs
+.idea/
+
 # CI scripts
 !**/ci/bin
 # Local environment initialization
