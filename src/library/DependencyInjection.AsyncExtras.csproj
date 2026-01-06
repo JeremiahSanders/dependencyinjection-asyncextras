@@ -1,16 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>10</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>Jds.$(AssemblyName)</RootNamespace>
+    <EnablePackageValidation>true</EnablePackageValidation>
   </PropertyGroup>
 
   <PropertyGroup>
     <Authors>jds</Authors>
     <Company />
-    <Copyright>Copyright (c) 2023 Jeremiah Sanders</Copyright>
+    <Copyright>Copyright (c) 2025 Jeremiah Sanders</Copyright>
     <Description>Extensions to Microsoft.Extensions.DependencyInjection.Abstractions supporting resolving services asynchronously.</Description>
     <PackageId>Jds.DependencyInjection.AsyncExtras</PackageId>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
