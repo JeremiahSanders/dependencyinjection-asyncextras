@@ -29,10 +29,20 @@ public class AsyncResolver<T> : IAsyncResolver<T>
     bool ignoreCache = false
   )
   {
-    if ((!ignoreCache && regenerateIfFaulted && _lazy is {IsValueCreated: true, Value.IsFaulted: true}) ||
-        (!ignoreCache && regenerateIfCanceled && _lazy is {IsValueCreated: true, Value.IsCanceled: true}))
+    // Check to see if we need to regenerate.
+    if ((!ignoreCache && regenerateIfFaulted && _lazy is { IsValueCreated: true, Value.IsFaulted: true }) ||
+        (!ignoreCache && regenerateIfCanceled && _lazy is { IsValueCreated: true, Value.IsCanceled: true }))
     {
-      _lazy = CreateLazy();
+      // If so, lock the lazy to prevent concurrent regeneration.
+      lock (_lazy)
+      {
+        // Now check again to see if we need to regenerate. The other thread might have
+        if ((!ignoreCache && regenerateIfFaulted && _lazy is { IsValueCreated: true, Value.IsFaulted: true }) ||
+            (!ignoreCache && regenerateIfCanceled && _lazy is { IsValueCreated: true, Value.IsCanceled: true }))
+        {
+          _lazy = CreateLazy();
+        }
+      }
     }
 
     return ignoreCache ? _factory(_serviceProvider) : _lazy.Value;
