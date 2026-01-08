@@ -3,16 +3,18 @@
   "isRoot": true,
   "tools": {
     "cicee": {
-      "version": "1.9.0",
+      "version": "2.0.0",
       "commands": [
         "cicee"
-      ]
+      ],
+      "rollForward": true
     },
     "xmldocmd": {
       "version": "2.9.0",
       "commands": [
         "xmldocmd"
-      ]
+      ],
+      "rollForward": false
     }
   }
 }

@@ -1,5 +1,3 @@
-version: "3.7"
-
 ##
 # Project-specific CI environment dependencies
 ##
@@ -8,14 +6,6 @@ version: "3.7"
 #
 #   pg:
 #     image: postgres:latest
-#     environment:
-#       - POSTGRES_DB=postgres
-#       - POSTGRES_USER=pgusr
-#       - POSTGRES_PASSWORD=pgpwd
-#     restart: always
-#
-#   pgplv8:
-#     image: clkao/postgres-plv8:12-2
 #     environment:
 #       - POSTGRES_DB=postgres
 #       - POSTGRES_USER=pgusr
